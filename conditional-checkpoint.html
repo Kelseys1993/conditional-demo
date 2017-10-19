@@ -31,15 +31,24 @@
 
 	//The function that will be used for the  conditional 
 	function myFunction(){
-		$(document).ready(function(){
+		$(window).on('load', function(){
 
-				$("#box1").click(function(){
-				$("#box1").hide(4000).show(4000);
+				$("#box1").fadeOut(2000).fadeIn(2000);
 		});
 
-	});
+	
 
 	}
+	function myFunction2(){
+		$(window).on('load', function(){
+
+				$("#box1").css('display', 'none');
+		});
+
+	
+
+	}
+
 
 
 var magicScore = 900; //magic score
@@ -50,12 +59,13 @@ var text; //the text that appears
 // if magic is greater than or equal to value then myFunction will be invoked
 if ( magicScore >= 600 || magicScore === 900 ){
 	myFunction();
-	text = 'Click me for some magic!'
+	text = 'Your a wizard!'
 
 	//if its not then myFunction will not be invoked 
 	//and the text will say not for muggles
 } else {
-	text = 'Not for Muggles'
+	myFunction2();
+	text = 'Not for Muggles!'
 }
 	var el = document.getElementById('words');
 	el.innerHTML = text;
