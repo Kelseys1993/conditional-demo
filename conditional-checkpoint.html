@@ -13,6 +13,10 @@
 #box1{
 	background-color: green;
 }
+p{
+	margin-left: 10px;
+	font-size: 30px;
+}
 </style>
 <body>
 
@@ -29,6 +33,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script>
 
+
+(function(){
+
+	var magicScore = 900; //magic score
+	var text; //the text that appears
+	
+
+	init();
+
 	//The function that will be used for the  conditional 
 	function myFunction(){
 		$(window).on('load', function(){
@@ -39,6 +52,7 @@
 	
 
 	}
+
 	function myFunction2(){
 		$(window).on('load', function(){
 
@@ -49,26 +63,35 @@
 
 	}
 
+	function init(){
+		// if magic is greater than or equal to value then myFunction will be invoked
+		if ( magicScore >= 600 || magicScore === 900 ){
+			myFunction();
+			text = 'Your a wizard!'
+
+			//if its not then myFunction will not be invoked 
+			//and the text will say not for muggles
+		} else {
+			myFunction2();
+			text = 'Not for Muggles!'
+		}
+		var el = document.getElementById('words');
+			el.innerHTML = text;
+	}
+})()
 
 
-var magicScore = 900; //magic score
-var text; //the text that appears
 
 
+	//Indentation
+	// Use an Iiffe
+	// Hoist your variables
+	// init
 
-// if magic is greater than or equal to value then myFunction will be invoked
-if ( magicScore >= 600 || magicScore === 900 ){
-	myFunction();
-	text = 'Your a wizard!'
 
-	//if its not then myFunction will not be invoked 
-	//and the text will say not for muggles
-} else {
-	myFunction2();
-	text = 'Not for Muggles!'
-}
-	var el = document.getElementById('words');
-	el.innerHTML = text;
+	
+
+	
 	</script>
 	
 
