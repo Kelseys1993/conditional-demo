@@ -34,50 +34,50 @@ p{
 	<script>
 
 
-(function(){
+		(function(){
 
-	var magicScore = 900; //magic score
-	var text; //the text that appears
-	
+			var magicScore = 900; //magic score
+			var text; //the text that appears
+			
 
-	init();
+			init();
 
-	//The function that will be used for the  conditional 
-	function myFunction(){
-		$(window).on('load', function(){
+			//The function that will be used for the  conditional 
+			function myFunction(){
+				$(window).on('load', function(){
 
-				$("#box1").fadeOut(2000).fadeIn(2000);
-		});
+						$("#box1").fadeOut(2000).fadeIn(2000);
+				});
 
-	
+			
 
-	}
+			}
 
-	function myFunction2(){
-		$(window).on('load', function(){
+			function myFunction2(){
+				$(window).on('load', function(){
 
-				$("#box1").css('display', 'none');
-		});
+						$("#box1").css('display', 'none');
+				});
 
-	
+			
 
-	}
+			}
 
-	function init(){
-		// if magic is greater than or equal to value then myFunction will be invoked
-		if ( magicScore >= 600 || magicScore === 900 ){
-			myFunction();
-			text = 'Your a wizard!'
+			function init(){
+				// if magic is greater than or equal to value then myFunction will be invoked
+				if ( magicScore >= 600 || magicScore === 900 ){
+					myFunction();
+					text = 'Your a wizard!'
 
-			//if its not then myFunction will not be invoked 
-			//and the text will say not for muggles
-		} else {
-			myFunction2();
-			text = 'Not for Muggles!'
-		}
-		document.getElementById('words').innerHTML = text;
-	}
-})()
+					//if its not then myFunction will not be invoked 
+					//and the text will say not for muggles
+				} else {
+					myFunction2();
+					text = 'Not for Muggles!'
+				}
+				document.getElementById('words').innerHTML = text;
+			}
+		})()
 
 
 
